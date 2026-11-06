@@ -1,0 +1,5 @@
+appId: wbapp_dnG3lngc9uTnP7d5CzUUSI
+name: 多账本记账
+localDir: D:\Tech\codes\accounting-app
+appType: web
+entryHtml: index.html

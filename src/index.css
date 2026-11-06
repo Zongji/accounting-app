@@ -1,0 +1,42 @@
+/* 关闭自动扫描：默认会扫到 site/、dist/ 里的构建产物，把压缩 JS 里的类名
+   当成源码，导致 CSS 每次构建都膨胀。只扫描真正的源码目录。 */
+@import "tailwindcss" source(none);
+@source "./**/*.{ts,tsx}";
+@source "../index.html";
+
+/* design.md §7.2 自定义断点令牌 */
+@theme {
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+
+  /* 国内习惯：支出红、收入绿、转账中性色 */
+  --color-expense: #dc2626;
+  --color-income: #16a34a;
+  --color-transfer: #64748b;
+
+  --font-sans: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+}
+
+:root {
+  color-scheme: light;
+  font-family: var(--font-sans);
+  background-color: #f8fafc;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 金额等数字使用等宽字形，避免列表里小数点跳动 */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}

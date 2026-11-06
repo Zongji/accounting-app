@@ -1,0 +1,7 @@
+node_modules/
+dist/
+# site/ 是发布用的构建产物目录，故意不忽略：发布器会排除被忽略的构建输出。
+.vite/
+coverage/
+*.local
+.DS_Store
